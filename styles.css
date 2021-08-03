@@ -1,0 +1,193 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Gruppo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Gruppo&family=Stint+Ultra+Expanded&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Styles for main page */
+  .main-heading {
+    margin: 0;
+    padding: 20px;
+    color: #f5f4f0;
+    text-align: center;
+    font-family: 'Goldman';
+    font-size: 40px;
+  
+  }
+  .head {
+    background-color: black;
+  }
+  
+  .header {
+    background-color: white;
+    height: 100vh;
+    margin-bottom: 50px;
+    min-height: 95vh;
+    
+  }
+  
+  .header .text {
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    height: 20vh;
+    text-align: center;
+    margin: 15vh 0;
+    margin-top: 35rem;
+    font-family: 'Stint Ultra Expanded';
+  }
+  .header .image {
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+
+  }
+  
+  .header .btn1 {
+    margin: 10px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #7e7b77;
+    font-size: 15px;
+    color: white;
+  }
+  
+  .btn-view:hover {
+    box-shadow: rgba(50, 50, 93, 0.337) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.726) 0px 2px 4px -1px;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #e3c774
+    ;
+  }
+  
+  .btn-new:hover {
+    box-shadow: rgba(50, 50, 93, 0.337) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.301) 0px 3px 5px -1px;
+    cursor: pointer;
+    color: black;
+    background-color: #e3c774
+    ;
+
+  }
+  
+  .btn {
+    background-color: white;
+    color: #7e7b77;
+    font-family: 'Stint Ultra Expanded';
+  }
+  .btn-primary{
+    background-color:#7dbfe2;
+    color: #fff;
+  }
+  .btn-primary:hover {
+      background-color: #0581c4;
+      color: white;
+  }
+  .header .heading {
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+    margin-bottom: 40px;
+    font-style: italic;
+  }
+  
+  #tasks-header {
+    font-family: 'Stint Ultra Expanded';
+    text-align: center;
+  }
+
+  body {
+    font-family: "Work Sans", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #f5f4f0  ;
+    scroll-behavior: smooth;
+  }
+
+/* Style for Task Lists */
+#task_cards{
+  font-family: 'Stint Ultra Expanded';
+}
+
+#add_tasks{
+  font-family: 'Stint Ultra Expanded';
+}
+#exampleModal{
+  font-family: 'Stint Ultra Expanded';
+}
+
+#modal-body{
+  font-family: 'Stint Ultra Expanded';
+}
+
+/* Responsive */
+  @media (max-width: 2304px) {
+    .header .text {
+      display: inline-block;
+      width: 100%;
+      height: unset;
+      text-align: center;
+      vertical-align: middle;
+      margin: 12vh 0;
+      padding: 35px 50px;
+      margin-bottom: 8vh;
+    }
+    .header .image {
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+    }
+    .header .image img {
+      width: auto;
+      height: 40vh;
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+    .header {
+      height: unset;
+    }
+    .header .btn1 {
+      padding: 15px 35px;
+      display: inline-block;
+      margin-top: 40px;
+    }
+  }
+  @media (max-width: 850px) {
+    .header .btn1 {
+      margin: 1rem;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .header .btn1 {
+      display: inline-block;
+    }
+    .header .text {
+      margin: 10vh 0;
+      margin-bottom: 3vh;
+    }
+  }
+
+
+  @media only screen and (max-width: 576px) {
+
+    #task {
+      margin-bottom: 50px;
+    }
+    .btn-primary {
+      margin-left: -15px;
+    }
+  }
+  

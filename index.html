@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+    <script defer src="taskManager.js"></script>
+    <script defer src="index.js"></script>
+
+    <title>Task Commander</title>
+
+</head>
+
+<body>
+
+    <!--Start Main Page-->
+    
+    <header class="head">
+        <h1 class="main-heading"> <i class="far fa-clipboard"></i> Task Commander </h1>
+    </header>
+    <div class="header">
+        <div class="text">
+            <h1 class="heading"> <i class="fas fa-laptop-house"></i> MANAGE YOUR TEAM REMOTELY </h1>
+            <a href="#add_tasks" class="btn1 btn-new"><i class="fas fa-thumbtack"></i> Assign Tasks</a>
+            <a href="#task_cards" class="btn1 btn-view"><i class="fas fa-tasks"></i> Tasks List</a>
+        </div>
+        <div class="image">
+            <img src="resources/images/main.jpg" alt="">
+        </div>
+    </div>
+
+    <!--End Main Page-->
+
+    <!--Start Form fields-->
+    
+    <div class="container" id="add_tasks">
+        <form id="new-task-form">
+            <div class="form-group row">
+                <label class="col-sm-12 pt-3 font-weight-bold" for="taskName">Name:<span
+                        class="text-danger">*</span></label>
+                <input type="text" class="col-sm-12 ml-3 form-control" id="taskName" placeholder="Name" required="true">
+                <div class="invalid-feedback">Task Name should be at least 6 characters.</div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-12 font-weight-bold" for="taskDescription">Description:<span
+                        class="text-danger">*<span></label>
+                <input type="text" class="col-sm-12 ml-3 form-control" id="taskDescription" placeholder="Description"
+                    required="true">
+                <div class="invalid-feedback">Task Description should be at least 8 characters.</div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-12 font-weight-bold" for="taskAssignedTo">Assigned To:<span
+                        class="text-danger">*</span></label>
+                <input type="text" class="col-sm-12 ml-3 form-control" id="taskAssignedTo" placeholder="Assigned To"
+                    required="true">
+                <div class="invalid-feedback">Task Assigned To should be at least 5 characters.</div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-12 font-weight-bold dueDate" for="taskDueDate">Due Date:<span
+                        class="text-danger">*</span></label>
+                <input type="date" id="taskDueDate" placeholder="dd-mm-yyyy" value="" min="01-01-2021" max="31-12-2022"
+                    class="col-sm-12 ml-3 form-control dueDate" required="true" />
+                <div class="invalid-feedback">Task Due Date should be a valid date and not in the past.</div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-12 font-weight-bold" for="status">Status:<span class="text-danger">*</span></label>
+                <select class="col-sm-12 ml-3 form-control" id="taskStatus" required="true">
+                    <option>To Do <i class="fas fa-tasks"></i></option>
+                    <option>In Progress</option>
+                    <option>Need Help</option>
+                    <option>Extra Time</option>
+                    <option>Cancelled</option>
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary font-weight-bold" id="submitBtn"><i class="fas fa-plus"></i> ADD TASK</button>
+            </div>
+        </form>
+    </div>
+    <!--End Form Fields-->    
+
+    <!--Start Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="fas fa-minus-circle"></i></button>
+        <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body" id="modal-body">
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="okBtn" data-dismiss="modal"><i class="far fa-thumbs-up"></i> OK</button>
+        </div>
+    </div>
+    </div>
+    </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="container d-flex pl-0">
+                    <h5 class="modal-title ml-2" id="exampleModalLabel"></h5>
+                </div> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span><i class="fas fa-minus-circle"></i></span> </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+            Are you sure you want to delete the task ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i> DELETE</button> 
+            </div>
+        </div>
+    </div>
+</div>
+    <!--End Modal-->
+
+    <!--Start Display Task Lists -->
+
+    <div id="tasks-header">
+        <h1><i class="fas fa-tasks"></i>  TASKS LIST</h1>
+    </div>
+    <div class="display-5 text-center" id="task_cards"></div>
+    <!--End Display Task Lists-->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
